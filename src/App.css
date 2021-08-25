@@ -49,3 +49,8 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.Time {
+  font-size: 40px;
+  font-weight: bold;
+}
