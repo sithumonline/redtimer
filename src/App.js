@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p style={{ color: color }} className="Time">{value}</p>
+        <p style={{ color: color }} className="Time">{value.split('.')[0]}</p>
         <button className="Button" onClick={resetTime}>Reset</button>
       </header>
     </div>
