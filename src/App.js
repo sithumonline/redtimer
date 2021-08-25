@@ -28,11 +28,16 @@ function App() {
 
   console.log(`${value}-${color}-${status}`);
 
+  const resetTime = () => {
+    axios.post("http://localhost:3080/api/v1/time");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p color={color}>{value}</p>
+        <p style={{ color: color }}>{value}</p>
+        <button className="Button" onClick={resetTime}>Reset</button>
       </header>
     </div>
   );
