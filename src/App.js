@@ -11,7 +11,7 @@ function App() {
   const { data, isFetched, isLoading, status } = useQuery(
     "getTime",
     () => async () => {
-      const response = await axios.get("http://localhost:3080/api/v1/time");
+      const response = await axios.get("https://red-timer-api.herokuapp.com/api/v1/time");
       return response.data;
     },
     {
@@ -29,7 +29,7 @@ function App() {
   console.log(`${value}-${color}-${status}`);
 
   const resetTime = () => {
-    axios.post("http://localhost:3080/api/v1/time");
+    axios.post("https://red-timer-api.herokuapp.com/api/v1/time");
   };
 
   return (
