@@ -6,7 +6,9 @@ function Post() {
   const [post, setPost] = useState("");
 
   const { isLoading, error, data } = useQuery("getPost", () =>
-    axios.get("https://red-timer-api.herokuapp.com/api/v1/post").then((res) => res.data)
+    axios
+      .get("https://red-timer-api.herokuapp.com/api/v1/post")
+      .then((res) => res.data)
   );
   let coreContent;
   let loading = "Loading";
@@ -56,9 +58,14 @@ function Post() {
           setPost(e.target.value);
         }}
       ></textarea>
-      <button className="Button Red" onClick={onCreate}>
-        Create
-      </button>
+      <div className="row">
+        <button className="Button Red" onClick={onCreate}>
+          Create
+        </button>
+        <a href={"/"}>
+          <button className="Button">Home</button>
+        </a>
+      </div>
     </div>
   );
 }
