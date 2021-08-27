@@ -8,11 +8,11 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
+    <React.StrictMode>
       <App />
-    </QueryClientProvider>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </QueryClientProvider>,
   document.getElementById("root")
 );
 
