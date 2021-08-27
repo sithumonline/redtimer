@@ -3,12 +3,12 @@ import axios from "axios";
 
 function Read(props) {
   const deletePost = () => {
-    axios.delete(`http://localhost:3080/api/v1${props.location.pathname}`);
+    axios.delete(`https://red-timer-api.herokuapp.com/api/v1${props.location.pathname}`);
   };
 
   const { isLoading, error, data } = useQuery("getPostOne", () =>
     axios
-      .get(`http://localhost:3080/api/v1${props.location.pathname}`)
+      .get(`https://red-timer-api.herokuapp.com/api/v1${props.location.pathname}`)
       .then((res) => res.data)
   );
   let coreContent;

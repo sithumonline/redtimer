@@ -6,7 +6,7 @@ function Post() {
   const [post, setPost] = useState("");
 
   const { isLoading, error, data } = useQuery("getPost", () =>
-    axios.get("http://localhost:3080/api/v1/post").then((res) => res.data)
+    axios.get("https://red-timer-api.herokuapp.com/api/v1/post").then((res) => res.data)
   );
   let coreContent;
   let loading = "Loading";
@@ -39,7 +39,7 @@ function Post() {
       return;
     }
     axios
-      .post("http://localhost:3080/api/v1/post", { body: post })
+      .post("https://red-timer-api.herokuapp.com/api/v1/post", { body: post })
       .then((res) => {
         console.log(res);
       });
