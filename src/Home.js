@@ -11,7 +11,9 @@ function Home() {
   const { data, isFetched, isLoading, status } = useQuery(
     "getTime",
     () => async () => {
-      const response = await axios.get("https://red-timer-api.herokuapp.com/api/v1/time");
+      const response = await axios.get(
+        "https://red-timer-api.herokuapp.com/api/v1/time"
+      );
       return response.data;
     },
     {
@@ -42,9 +44,14 @@ function Home() {
         <button className="Button Red" onClick={resetTime}>
           Reset
         </button>
-        <a href={"/post"}>
-          <button className="Button">Read Post</button>
-        </a>
+        <div className="row">
+          <a href={"/post"}>
+            <button className="Button">Read Post</button>
+          </a>
+          <a href="https://red-timer-api.herokuapp.com/chat" rel="noreferrer" target="_blank">
+            <button className="Button Green">Chat</button>
+          </a>
+        </div>
       </header>
     </div>
   );
